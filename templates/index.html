@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minus Account Calculator</title>
+  </head>
+  <body>
+    <h1>Minus Account Interest Calculator</h1>
+    <form method="POST">
+      <label for="interest_rate">Interest Rate (%):</label><br />
+      <input type="text" id="interest_rate" name="interest_rate" /><br /><br />
+
+      <label for="limit">Credit Limit (₩):</label><br />
+      <input type="text" id="limit" name="limit" /><br /><br />
+
+      <label for="borrowed">Borrowed Amount (₩):</label><br />
+      <input type="text" id="borrowed" name="borrowed" /><br /><br />
+
+      <label for="periods">Number of Periods (Months):</label><br />
+      <input type="text" id="periods" name="periods" /><br /><br />
+
+      <input type="submit" value="Calculate" />
+    </form>
+
+    {% if graph_url %}
+    <h2>Debt Growth Over Time</h2>
+    <img src="data:image/png;base64,{{ graph_url }}" />
+    {% endif %}
+  </body>
+</html>
